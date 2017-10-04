@@ -178,8 +178,6 @@ void Boggle::findWords(int r, int c, string word, Set<string> & marked,Set<strin
         string newMark=integerToString(r)+integerToString(c);
         if(!marked.contains(newMark)){
             marked.add(newMark);
-            BoggleGUI::setAnimationDelay(500);
-            BoggleGUI::setHighlighted(r,c,1);
             word+=boardGrid[r][c];
             word=toLowerCase(word);
             if(dict->containsPrefix(word)){
@@ -202,8 +200,6 @@ void Boggle::findWords(int r, int c, string word, Set<string> & marked,Set<strin
 
                 }
             }
-            BoggleGUI::setAnimationDelay(500);
-            BoggleGUI::setHighlighted(r,c,0);
             marked.remove(newMark);
         }
     }
